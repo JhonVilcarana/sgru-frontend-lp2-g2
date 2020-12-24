@@ -1,0 +1,54 @@
+.toolbar img{
+    margin: 0 auto;
+    width: 200px;
+  }
+  
+  .e-container {
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  .e-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .e-sidenav {
+     user-select: none;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+  .menu-button.rotated {
+    transform: rotate(180deg);
+  }
+  .submenu {
+    display: none;
+    overflow-y: visible;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 30px;
+  }
+  
+  .submenu img{
+   border-radius: 100%;
+    width: 120px;
+    height: 100px;
+  }
+  .submenu.expanded {
+    transform: scaleY(1);
+  }
+  
+  .example-card {
+    max-width: 24rem;
+  }
+  .row  {  padding: 2rem 1rem 1rem 4rem; }
+  
+  .wrapper {
+      padding-left: 300px;
+  }

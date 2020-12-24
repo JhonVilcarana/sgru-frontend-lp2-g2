@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+  
+      <div class="col m8 offset-m2 s12">
+        <h2 class="blue-text text-lighten-2">Your Forms</h2>
+  
+        <mat-form-field appearance="fill">
+  
+          <mat-label>Semestre</mat-label>
+          <mat-select [(value)]="selected">
+            <mat-option *ngFor="let semestre of semestres" [value]="semestre.semestre_id">
+              {{semestre.nombre}}
+            </mat-option>
+  
+          </mat-select>
+  
+  
+  
+        </mat-form-field>
+  
+        <a class="btn-floating btn-large waves-effect waves-lightred blue lighten-2 pulse">
+        </a>
+        <div>
+  
+          <div class="card">
+            <div class="card-content">
+  
+              <div class="row form">
+                <div class="col m9 s12">
+                  <div class="row title-box">
+                    <div class="col m8 s12">
+                      <h5 class="title"> titulo </h5>
+                    </div>
+  
+                    <div class="col m4 s12">
+                      <div class="row  valign-wrapper">
+                        <div class="col s6">
+                          <!--app-active [form]="form"></app-active-->
+                        </div>
+  
+                        <div class="col m6">
+                          <a href="#" class="grey-text">
+                            eliminar
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+  
+                  <div class="row">
+                    <div class="col m12">
+                      <p class="description grey-text"> Descripcion</p>
+                    </div>
+                  </div>
+  
+                </div>
+  
+                <div class="col m3 s12 center">
+                  <div class="col m12 s6">
+                    <div class="row">
+                      <a class="btn light-green">Edit</a>
+                    </div>
+                  </div>
+  
+                  <div class="col m12 s6">
+                    <div class="row">
+                      <a class="btn blue center">Answers</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="fixed-action-btn">
+  
+  </div>

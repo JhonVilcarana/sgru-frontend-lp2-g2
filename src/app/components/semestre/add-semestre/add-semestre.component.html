@@ -1,0 +1,35 @@
+<mat-card style="text-align: center;margin-bottom:5px;" *ngIf=isRegi>AGREGAR SEMESTRE</mat-card>
+<mat-card style="text-align: center;margin-bottom:5px;" *ngIf=!isRegi>MODIFICAR SEMESTRE</mat-card>
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Datos</mat-panel-title>
+            <mat-icon>account_circle</mat-icon>
+        </mat-expansion-panel-header>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-label>NOMBRES</mat-label>
+                        <input matInput type="text" [(ngModel)]="semestrem.nombre" required
+                        name="title"
+                        ngModel
+                        #f="ngModel">
+                        <mat-error *ngIf="f.invalid">Este campo es necesario</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <input matInput value="0" [hidden]="true">
+                </td>
+            </tr>
+        </table>
+
+    </mat-expansion-panel>
+</mat-accordion>
+<button mat-raised-button color="accent" (click)="create()" *ngIf=isRegi>Agregar</button>
+<button mat-raised-button color="accent" (click)="updat()" *ngIf=!isRegi>Modificar</button>
+<button mat-raised-button color="warn" (click)="Register()">Cancelar</button>

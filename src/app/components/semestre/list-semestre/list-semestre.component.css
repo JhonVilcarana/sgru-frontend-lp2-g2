@@ -1,0 +1,7 @@
+mat-card{
+    margin: 10px;
+}
+table, mat-form-field,mat-paginator{
+    width: 70%;
+    margin-left: 15%;
+}

@@ -1,0 +1,46 @@
+<mat-card style="text-align: center;margin-bottom:5px;" *ngIf=isRegi2>AGREGAR NIVEL COMPETENCIA</mat-card>
+<mat-card style="text-align: center;margin-bottom:5px;" *ngIf=!isRegi2>MODIFICAR NIVEL COMPETENCIA</mat-card>
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Datos</mat-panel-title>
+            <mat-icon>account_circle</mat-icon>
+        </mat-expansion-panel-header>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                      <mat-form-field>
+                        <mat-label>COMPETENCIA</mat-label>
+                        <mat-select [(ngModel)]="niv_compModel.competencias_id" [formControl]="asigControl" required>
+                            <mat-option>Seleccione</mat-option>
+                            <mat-option *ngFor="let c of compentencias" [value]="c.COMPETENCIAS_ID">{{c.COMPETENCIA}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="asigControl.hasError('required')">Este campo es requerido</mat-error>
+                        <mat-hint>{{asigControl.value?.sound}}</mat-hint>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>NIVEL</mat-label>
+                        <mat-select [(ngModel)]="niv_compModel.utils_id" [formControl]="asigControl" required>
+                            <mat-option>Seleccione</mat-option>
+                          <mat-option *ngFor="let n of niveles" [value]="n.UTILS_ID">{{n.NOMBRE}}{{niv_compModel.utils_id}}</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="asigControl.hasError('required')">Este campo es requerido</mat-error>
+                        <mat-hint>{{asigControl.value?.sound}}</mat-hint>
+                      </mat-form-field>
+                    
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <input matInput value="0" [hidden]="true">
+                </td>
+            </tr>
+        </table>
+
+    </mat-expansion-panel>
+</mat-accordion>
+<button mat-raised-button color="accent" (click)="create()" *ngIf=isRegi2>Agregar</button>
+<button mat-raised-button color="accent" (click)="updat()" *ngIf=!isRegi2>Modificar</button>
+<button mat-raised-button color="warn" (click)="Register()">Cancelar</button>

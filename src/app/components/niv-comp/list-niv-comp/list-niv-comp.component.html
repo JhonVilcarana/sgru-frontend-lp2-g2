@@ -1,0 +1,64 @@
+<button style="margin: 5px;" *ngIf="!registrar" mat-fab color="primary"
+    aria-label="Example icon button with a home icon" (click)="Register()">
+    <mat-icon>add</mat-icon>
+</button>
+<mat-card *ngIf="registrar">
+    <app-add-niv-comp  [isRegi2]="isRegi2" [isSelected]="isSelected" [palomain]="mepo"></app-add-niv-comp>
+</mat-card>
+
+<mat-card>
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="NIVEL COMPETENCIA"  class="mat-elevation-z8" >
+            <mat-form-field>
+                <mat-label>Filtro</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+              </mat-form-field>
+            <table  mat-table [dataSource]="nivcomp" matSort>
+                <ng-container matColumnDef="N">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nº </th>
+                    <td mat-cell *matCellDef="let i=index"> {{i+1}} </td>
+                </ng-container>
+                <ng-container matColumnDef="COMPETENCIA">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> COMPETENCIA </th>
+                    <td mat-cell *matCellDef="let element"> {{element.COMPETENCIA}} </td>
+                </ng-container>
+                <ng-container matColumnDef="NIVEL">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> NIVEL </th>
+                    <td mat-cell *matCellDef="let element"> {{element.NOMBRE}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                <ng-container matColumnDef="EDITAR">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> EDITAR </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="accent" aria-label="Example icon button with a heart icon"
+                        (click)="engineerMijail(element.ID)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="ELIMINAR">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ELIMINAR </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+                            (click)="del(element.ID)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+                
+                
+            </table>
+            <br>
+            <br>
+            <mat-card>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>           
+            </mat-card>
+            
+        </mat-tab>
+        <!-- <mat-progress-bar color="accent" mode="indeterminate" *ngIf="!load"></mat-progress-bar> -->
+        <mat-card *ngIf=notDataFound>NOT DATA FOUND</mat-card>
+        <mat-spinner *ngIf="!load"></mat-spinner>
+    </mat-tab-group>
+</mat-card>
+        

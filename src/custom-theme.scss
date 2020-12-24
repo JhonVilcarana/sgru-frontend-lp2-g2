@@ -1,0 +1,214 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$my-primary: (
+  50:#f8e3e9,
+  100:#efb8c9,
+  200:#e58ba6,
+  300:#da6084,
+  400:#d2426c,
+  500:#cb2955,
+  600:#bb2652,
+  700:#a6234d,
+  800:#911f49,
+  900:#6c1a3f,
+  A100:#ff8a80,
+  A200:#ff5252,
+  A400:#ff1744,
+  A700:#d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$my-complementary: (
+  50:#e1f3ec,
+  100:#b6e0d0,
+  200:#89cdb2,
+  300:#5db995,
+  400:#40a980,
+  500:#2d996e,
+  600:#288c62,
+  700:#227c54,
+  800:#1a6c47,
+  900:#0d502e,
+  A100:#ff8a80,
+  A200:#ff5252,
+  A400:#ff1744,
+  A700:#ff1744,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$my-analogous1: (
+  50:#f2e4ee,
+  100:#e1bcd6,
+  200:#cd90bc,
+  300:#b765a1,
+  400:#a7468e,
+  500:#962a7d,
+  600:#8b2578,
+  700:#7b1f70,
+  800:#6c1a68,
+  900:#521358,
+  A100:#ff8a80,
+  A200:#ff5252,
+  A400:#ff1744,
+  A700:#ff1744,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$my-analogous2: (
+  50:#ffdec2,
+  100:#ffbda7,
+  200:#e89a86,
+  300:#c87862,
+  400:#b15d47,
+  500:#99422d,
+  600:#8c3928,
+  700:#7b2c1f,
+  800:#6c1e1a,
+  900:#5b0d12,
+  A100:#ff8a80,
+  A200:#ff5252,
+  A400:#ff1744,
+  A700:#ff1744,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$my-triadic1: (
+  50:#fee8c8,
+  100:#e6c7a6,
+  200:#c7a481,
+  300:#a7835a,
+  400:#8f693d,
+  500:#765120,
+  600:#6c471a,
+  700:#5d3b12,
+  800:#512d0a,
+  900:#421f00,
+  A100:#ff8a80,
+  A200:#ff5252,
+  A400:#ff1744,
+  A700:#ff1744,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$my-triadic2: (
+  50:#f3f8e9,
+  100:#e1eec7,
+  200:#cde2a4,
+  300:#b9d77f,
+  400:#a9ce62,
+  500:#9ac646,
+  600:#8bb63e,
+  700:#76a234,
+  800:#628e2b,
+  900:#3f6c1a,
+  A100:#ff8a80,
+  A200:#ff5252,
+  A400:#ff1744,
+  A700:#ff1744,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$my-theme-primary:mat-palette($my-primary,900);
+$my-theme-accent:mat-palette($my-complementary,A200, A100, A400);
+$my-theme-warn:mat-palette($mat-red,900);
+$my-theme:mat-light-theme((
+    color:(
+        primary:$my-theme-primary,
+        accent:$my-theme-accent,
+        warn:$my-theme-warn,
+    )
+));
+
+@include angular-material-theme($my-theme);
+

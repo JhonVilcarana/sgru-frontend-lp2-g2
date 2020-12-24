@@ -1,0 +1,148 @@
+<mat-accordion class="example-headers-align">
+
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Datos Personales</mat-panel-title>
+            <mat-icon>account_circle</mat-icon>
+        </mat-expansion-panel-header>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+
+                <td>
+                    <mat-form-field>
+                        <mat-label>NOMBRES</mat-label>
+                        <input matInput type="text" [(ngModel)]="evaluador.nombres">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>APELLIDOS</mat-label>
+                        <input matInput type="text" [(ngModel)]="evaluador.apellidos">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>TIPO DE DOCUMENTO</mat-label>
+                        <mat-select [(ngModel)]="evaluador.tipo_doc_id" (selectionChange)="select()">
+                            <mat-option [value]="t.TIPO_DOC_ID" *ngFor="let t of tipoDocumentos">{{t.NOMBRE}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" *ngIf="isSelected">
+                        <mat-label>NUMERO DE DOCUMENTO</mat-label>
+                        <input matInput #c [attr.maxlength]="hola" [(ngModel)]="evaluador.n_doc">
+                        <mat-hint align="end">{{c.value.length}} / {{hola}}</mat-hint>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Fecha de nacimiento</mat-label>
+                        <input matInput type="date" [(ngModel)]="evaluador.fecha_nac">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>SEXO</mat-label>
+                        <mat-select [(ngModel)]="evaluador.sexo">
+                            <mat-option *ngFor="let s of sexo" [value]=s.id>{{s.nombre}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>ESTADO CIVIL</mat-label>
+                        <mat-select [(ngModel)]="evaluador.estado_civil_id">
+                            <mat-option *ngFor="let e of estadosCiviles" [value]="e.ESTADO_CIVIL_ID">{{e.NOMBRE}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <input matInput value="0" [hidden]="true">
+                </td>
+            </tr>
+        </table>
+
+        <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">SIGUIENTE</button>
+        </mat-action-row>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Contacto</mat-panel-title>
+            <mat-icon>phone</mat-icon>
+        </mat-expansion-panel-header>
+        <table cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-label>CORREO PERSONAL</mat-label>
+                        <input matInput type="email" [(ngModel)]="evaluador.correo">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>CORREO DE TRABAJO</mat-label>
+                        <input matInput type="email" [(ngModel)]="evaluador.correo_trabajo">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>TELEFONO</mat-label>
+                        <input matInput type="text" [(ngModel)]="evaluador.telefono">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">ANTERIOR</button>
+            <button mat-button color="primary" (click)="nextStep()">SIGUIENTE</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Datos Curriculares</mat-panel-title>
+            <mat-icon>date_range</mat-icon>
+        </mat-expansion-panel-header>
+
+        <table class="fwit" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label class="example-full-width">GRADO ACADEMICO</mat-label>
+                        <textarea matInput type="text" [(ngModel)]="evaluador.grado_academico"></textarea>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style"
+                        [(ngModel)]="evaluador.tipo_evaluador_id">
+                        <mat-button-toggle *ngFor="let t of tipoEvaluadores" [value]="t.TIPO_EVALUADOR_ID">{{t.NOMBRE}}
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </td>
+            </tr>
+        </table>
+
+        <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">ANTERIOR</button>
+            <button mat-button color="primary" (click)="nextStep()">FIN</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+</mat-accordion>
+
+<button mat-raised-button color="accent" (click)="add()">Agregar</button>
+
+<button mat-raised-button color="warn" (click)="Register()">Cancelar</button>

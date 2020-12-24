@@ -1,0 +1,65 @@
+<button style="margin: 5px;" *ngIf="!isRegister" mat-fab color="primary"
+    aria-label="Example icon button with a home icon" (click)="Register()">
+    <mat-icon>add</mat-icon>
+</button>
+<mat-card *ngIf="isRegister">
+    <app-add-evaluador></app-add-evaluador>
+</mat-card>
+
+<mat-card>
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="DOCENTE">
+            <table mat-table [dataSource]="docentes" class="mat-elevation-z8">
+                <ng-container matColumnDef="NOMBRES">
+                    <th mat-header-cell *matHeaderCellDef> NOMBRES </th>
+                    <td mat-cell *matCellDef="let element"> {{element.NOMBRES}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="APELLIDOS">
+                    <th mat-header-cell *matHeaderCellDef> APELLIDOS </th>
+                    <td mat-cell *matCellDef="let element"> {{element.APELLIDOS}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="DOCUMENTO">
+                    <th mat-header-cell *matHeaderCellDef> DOCUMENTO </th>
+                    <td mat-cell *matCellDef="let element"> {{element.N_DOC}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="GRADO_ACADEMICO">
+                    <th mat-header-cell *matHeaderCellDef> GRADO ACADEMICO </th>
+                    <td mat-cell *matCellDef="let element"> {{element.GRADO_ACADEMICO}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="EDITAR">
+                    <th mat-header-cell *matHeaderCellDef> EDITAR </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="accent" aria-label="Example icon button with a heart icon">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="ELIMINAR">
+                    <th mat-header-cell *matHeaderCellDef> ELIMINAR </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+                            (click)="delete(element.PERSONA_ID)">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-tab>
+
+        <mat-tab label="EVALUADORES EXTERNOS">
+
+        </mat-tab>
+        <mat-tab label="EXPERTOS EXTERNOS">
+
+        </mat-tab>
+        <mat-tab label="EVALUADORES HABILIDADES BLANDAS">
+
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
